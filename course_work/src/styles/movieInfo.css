@@ -1,0 +1,373 @@
+.movie-container {
+  max-width: 1200px;
+  margin: 100px auto 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 1px solid rgba(233, 69, 96, 0.1);
+}
+
+.movie-content {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+  align-items: flex-start;
+}
+
+.movie-info-poster {
+  display: block;
+  flex: 0 0 300px;
+  width: 300px;
+  max-width: 300px;
+  aspect-ratio: 2 / 3;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(233, 69, 96, 0.2);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(233, 69, 96, 0.1);
+}
+
+.movie-info-poster:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(233, 69, 96, 0.3);
+  border-color: rgba(233, 69, 96, 0.3);
+}
+
+.movie-details {
+  flex: 1;
+}
+
+.movie-details h2 {
+  margin: 0 0 20px 0;
+  font-size: 2.5rem;
+  color: #e94560;
+  line-height: 1.2;
+}
+
+.movie-details p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: rgba(240, 240, 240, 0.85);
+}
+
+.movie-details a {
+  color: #e94560;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.movie-details a:hover {
+  text-decoration: underline;
+  color: #ff6b9d;
+  transform: translateX(4px);
+}
+
+.movie-details strong {
+  color: #e94560;
+}
+
+/* Жанри */
+.genres-section {
+  margin: 25px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.genre-badge {
+  background: rgba(233, 69, 96, 0.15);
+  color: #e94560;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  border: 1px solid #e94560;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.genre-badge:hover {
+  background: #e94560;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Коментарі */
+.comments-section {
+  margin-top: 50px;
+  border-top: 1px solid rgba(233, 69, 96, 0.2);
+  padding-top: 40px;
+}
+
+.comments-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #e94560;
+  position: relative;
+  display: inline-block;
+}
+
+.comments-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #e94560;
+  border-radius: 2px;
+}
+
+.comment-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.comment-form input {
+  flex-grow: 1;
+  min-width: 250px;
+  padding: 14px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.comment-form input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 2px #e94560;
+}
+
+.comment-form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.comment-form button {
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #e94560 0%, #d13254 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.comment-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+}
+
+.comments-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.comments-list li {
+  background: rgba(30, 41, 59, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #e94560;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.comments-list li:hover {
+  background: rgba(30, 41, 59, 0.6);
+  transform: translateX(6px);
+}
+
+.comments-list p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.comments-list p:first-child {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.user-comment {
+  background: rgba(76, 175, 80, 0.1) !important;
+  border-left-color: #4caf50 !important;
+}
+
+.user-comment p:first-child {
+  color: #81c784 !important;
+}
+
+.other-comment {
+  background: rgba(30, 41, 59, 0.4);
+  border-left-color: #e94560;
+}
+
+.other-comment p:first-child {
+  color: #e94560;
+}
+
+.comment-text {
+  color: rgba(240, 240, 240, 0.85);
+  font-size: 0.95rem;
+}
+
+.error-message {
+  background-color: rgba(255, 107, 107, 0.15);
+  color: #ff8a80;
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #ff6b6b;
+  font-size: 0.95rem;
+}
+
+.del-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 107, 107, 0.2);
+  color: #ff8a80;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.del-button:hover {
+  background: rgba(255, 107, 107, 0.4);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Дії з фільмом */
+.movie-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.action-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.action-btn.active {
+  border-color: #e94560;
+  background: rgba(233, 69, 96, 0.2);
+  color: #e94560;
+  font-weight: 600;
+}
+
+.heart-icon {
+  color: #e94560;
+}
+
+.eye-icon {
+  color: #4cc9f0;
+}
+
+.clock-icon {
+  color: #f8961e;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.action-btn:hover .heart-icon {
+  animation: pulse 0.6s ease infinite;
+}
+
+.action-btn:hover .eye-icon {
+  animation: bounce 0.6s ease infinite;
+}
+
+.action-btn:hover .clock-icon {
+  animation: bounce 0.6s ease infinite;
+}
+
+/* Адаптивний дизайн */
+@media (max-width: 768px) {
+  .movie-container {
+    margin: 80px 12px 20px;
+    padding: 20px;
+  }
+
+  .movie-content {
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .movie-info-poster {
+    flex-basis: auto;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .movie-details h2 {
+    font-size: 1.8rem;
+  }
+
+  .movie-actions {
+    justify-content: center;
+  }
+
+  .action-btn {
+    flex: 1;
+    min-width: 140px;
+    justify-content: center;
+  }
+
+  .del-button {
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+}

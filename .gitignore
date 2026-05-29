@@ -1,0 +1,6 @@
+
+backend/node_modules/
+course_work/node_modules/
+
+backend/.env
+course_work/.env
