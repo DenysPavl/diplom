@@ -23,7 +23,7 @@ export default function HeaderA({setToken}){
     return(
       <header className="headerA">
       <div className="headerA_container">
-        <span className="headerA_logo">logo</span>
+        <Link to="/" className="headerA_logo">CineWave</Link>
     
         <ul className="nav-links">
         {storedToken ? (

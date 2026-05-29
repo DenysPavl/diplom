@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Cinewave Logo</title>
+  <desc id="desc">Vector logo with film reel, search magnifier, play icon and Cinewave text.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="41" y1="34" x2="478" y2="499" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B6C73"/>
+      <stop offset="0.35" stop-color="#58C9E6"/>
+      <stop offset="0.68" stop-color="#355BC2"/>
+      <stop offset="1" stop-color="#2F206C"/>
+    </linearGradient>
+
+    <radialGradient id="bgGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(95 55) rotate(50) scale(390 360)">
+      <stop offset="0" stop-color="#9DFDFF" stop-opacity="0.75"/>
+      <stop offset="0.45" stop-color="#40CCEF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#37237B" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="cyanStroke" x1="72" y1="53" x2="376" y2="375" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#72FFF3"/>
+      <stop offset="0.42" stop-color="#D9FEFF"/>
+      <stop offset="0.74" stop-color="#3E57D5"/>
+      <stop offset="1" stop-color="#5A29C5"/>
+    </linearGradient>
+
+    <linearGradient id="reelFill" x1="67" y1="74" x2="267" y2="351" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="0.58" stop-color="#D9F4FF"/>
+      <stop offset="1" stop-color="#AFC8F6"/>
+    </linearGradient>
+
+    <linearGradient id="holeFill" x1="74" y1="91" x2="160" y2="283" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#11D5D4"/>
+      <stop offset="0.38" stop-color="#0E5A88"/>
+      <stop offset="1" stop-color="#080A55"/>
+    </linearGradient>
+
+    <linearGradient id="lensFill" x1="218" y1="104" x2="372" y2="288" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#076F95"/>
+      <stop offset="0.47" stop-color="#0C4D80"/>
+      <stop offset="1" stop-color="#11135B"/>
+    </linearGradient>
+
+    <linearGradient id="lensRing" x1="178" y1="76" x2="428" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9FFFF"/>
+      <stop offset="0.52" stop-color="#E7FCFF"/>
+      <stop offset="1" stop-color="#85B8FF"/>
+    </linearGradient>
+
+    <linearGradient id="handleFill" x1="362" y1="273" x2="475" y2="388" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#104D87"/>
+      <stop offset="1" stop-color="#061D61"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="9" stdDeviation="8" flood-color="#071443" flood-opacity="0.42"/>
+    </filter>
+
+    <filter id="glow" x="-35%" y="-35%" width="170%" height="170%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.25 0 0 0 0 1 0 0 0 0 0.95 0 0 0 0.65 0" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="textShadow" x="-15%" y="-30%" width="130%" height="160%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#031133" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="34" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="34" fill="url(#bgGlow)"/>
+
+  <!-- outer neon orbit -->
+  <circle cx="205" cy="186" r="151" stroke="url(#cyanStroke)" stroke-width="7" opacity="0.95" filter="url(#glow)"/>
+  <path d="M359 287C331 318 290 337 244 337C157 337 86 266 86 179C86 95 152 26 235 22" stroke="#89FFF5" stroke-width="4" stroke-linecap="round" opacity="0.38"/>
+
+  <!-- film reel body -->
+  <g filter="url(#softShadow)">
+    <circle cx="205" cy="186" r="119" fill="url(#reelFill)" opacity="0.94"/>
+    <circle cx="205" cy="186" r="89" fill="#0A2E6C" opacity="0.13"/>
+    <circle cx="205" cy="186" r="40" fill="#152D76" opacity="0.2"/>
+  </g>
+
+  <!-- reel holes -->
+  <g filter="url(#softShadow)">
+    <circle cx="170" cy="82" r="30" fill="url(#holeFill)"/>
+    <circle cx="104" cy="150" r="31" fill="url(#holeFill)"/>
+    <circle cx="118" cy="242" r="31" fill="url(#holeFill)"/>
+    <circle cx="205" cy="287" r="30" fill="url(#holeFill)"/>
+  </g>
+
+  <!-- central reel cutout accent -->
+  <circle cx="205" cy="186" r="30" fill="#0B3D7E" opacity="0.65"/>
+  <circle cx="205" cy="186" r="15" fill="#EFFFFF" opacity="0.9"/>
+
+  <!-- magnifier handle, drawn under lens -->
+  <g filter="url(#softShadow)">
+    <path d="M364 269L456 361" stroke="#DFFFFF" stroke-width="70" stroke-linecap="round"/>
+    <path d="M364 269L456 361" stroke="#051B62" stroke-width="59" stroke-linecap="round"/>
+    <path d="M364 269L456 361" stroke="url(#handleFill)" stroke-width="45" stroke-linecap="round"/>
+  </g>
+
+  <!-- magnifier lens -->
+  <g filter="url(#softShadow)">
+    <circle cx="293" cy="185" r="111" fill="#0A1B64"/>
+    <circle cx="293" cy="185" r="100" fill="url(#lensRing)"/>
+    <circle cx="293" cy="185" r="78" fill="url(#lensFill)"/>
+    <circle cx="293" cy="185" r="68" stroke="#1D9DBA" stroke-opacity="0.38" stroke-width="5"/>
+    <path d="M256 129C273 118 296 116 318 122" stroke="#7CFFF3" stroke-width="5" stroke-linecap="round" opacity="0.25"/>
+  </g>
+
+  <!-- play icon -->
+  <path d="M273 143C273 137 280 134 285 137L354 179C359 182 359 189 354 192L285 234C280 237 273 234 273 228V143Z" fill="#F7FFFF"/>
+
+  <!-- bottom text -->
+  <g filter="url(#textShadow)">
+    <text x="256" y="439" text-anchor="middle"
+          font-family="Montserrat, Avenir Next, Arial, sans-serif"
+          font-size="51" font-weight="800" letter-spacing="10"
+          fill="#F7FFFF">CINEWAVE</text>
+
+    <text x="256" y="480" text-anchor="middle"
+          font-family="Montserrat, Avenir Next, Arial, sans-serif"
+          font-size="21" font-weight="700" letter-spacing="4.6"
+          fill="#F7FFFF">SEARCH &amp; VIEW MOVIES</text>
+  </g>
+</svg>
