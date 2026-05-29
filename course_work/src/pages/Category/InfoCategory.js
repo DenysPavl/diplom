@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import API_URL from "../../utils/api";
 
 export default function InfoCategory() {
   const [category, setCategory] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
-    fetch("http://localhost:8001/api/category/" + id, {
+    fetch(`${API_URL}/api/category/${id}`, {
       headers: {
         "Content-Type": "application/json",
       },

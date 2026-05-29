@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import ChatMessage from "../../components/ChatMessage";
+import API_URL from "../../utils/api";
 import "../../styles/chat.css";
 
 const TMDB_API_KEY = 'c85178492d59c53b4fc5c8921eb820e5';
@@ -70,11 +71,12 @@ export default function AIChat({ token }) {
 
     try {
       const response = await axios.post(
-        "http://localhost:8001/api/chat",
+        `${API_URL}/api/chat`,
         {
           userMessage,
           conversationHistory
         },
+
         {
           headers: { Authorization: `Bearer ${token}` }
         }

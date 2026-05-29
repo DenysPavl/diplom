@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import API_URL from "../../utils/api";
 
 export default function AddCategory() {
   const [name, setName] = useState("");
@@ -8,7 +9,7 @@ export default function AddCategory() {
   function handlSubmit(event) {
     event.preventDefault();
 
-    fetch("http://localhost:8001/api/category/create", {
+    fetch(`${API_URL}/api/category/create`, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -62,7 +63,7 @@ export default function AddCategory() {
     }
   
     try {
-      const response = await fetch("http://localhost:8001/api/category/create", {
+      const response = await fetch(`${API_URL}/api/category/create`, {
         headers: {
           "Content-Type": "application/json",
         },

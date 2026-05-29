@@ -3,6 +3,7 @@ import MovieCart from "../../components/WishlistMovieCard";
 import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import API_URL from "../../utils/api";
 import '../../styles/profile.css'
 
 export default function Profile({ token, setToken }) {
@@ -27,7 +28,7 @@ export default function Profile({ token, setToken }) {
 const API_KEY = 'c85178492d59c53b4fc5c8921eb820e5';
 
   useEffect(() => {
-    axios.get(`http://localhost:8001/api/profile`, {
+    axios.get(`${API_URL}/api/profile`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(async (res) => {
@@ -107,7 +108,7 @@ const API_KEY = 'c85178492d59c53b4fc5c8921eb820e5';
 
     try {
       const res = await axios.put(
-        "http://localhost:8001/api/profile",
+        `${API_URL}/api/profile`,
         profileForm,
         {
           headers: { Authorization: `Bearer ${token}` },

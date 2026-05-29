@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import API_URL from "../utils/api";
 
 export default function CategoryList({name,setFormData}) {
   const [categorys, setCategorys] = useState();
@@ -8,7 +9,7 @@ export default function CategoryList({name,setFormData}) {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch("http://localhost:8001/api/category/all", {
+        const response = await fetch(`${API_URL}/api/category/all`, {
           headers: {
             "Content-Type": "application/json",
           },

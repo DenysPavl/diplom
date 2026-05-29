@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useParams} from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import API_URL from "../../utils/api";
 
 export default function UpdateCategory(props) {
   const query = new URLSearchParams(useLocation().search);
@@ -17,7 +18,7 @@ export default function UpdateCategory(props) {
       return;
     }
 
-    fetch("http://localhost:8001/api/category/update/"+id, {
+    fetch(`${API_URL}/api/category/update/${id}`, {
       headers: {
         "Content-Type": "application/json",
       },

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import '../../styles/login.css'
+import API_URL from "../../utils/api";
 
 export default function RegisterForm({setToken}) {
   const [email, setEmail] = useState("");
@@ -12,7 +13,7 @@ export default function RegisterForm({setToken}) {
 
   function handlSubmit(event) {
     event.preventDefault();
-    axios.post("http://localhost:8001/api/auth/registration", {
+    axios.post(`${API_URL}/api/auth/registration`, {
         username,
         email,
         password,

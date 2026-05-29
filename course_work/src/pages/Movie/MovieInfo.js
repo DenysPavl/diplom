@@ -2,6 +2,8 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import '../../styles/movieInfo.css'
 import axios from 'axios';
+import API_URL from '../../utils/api';
+import API_URL from '../../utils/api';
 
 const MovieInfo = () => {
   const { id } = useParams(); // Отримуємо ID з URL
@@ -34,7 +36,7 @@ const MovieInfo = () => {
     if (!token) return;
 
     try {
-      const res = await axios.get(`http://localhost:8001/api/user/status/${id}`, {
+      const res = await axios.get(`${API_URL}/api/user/status/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -52,7 +54,7 @@ const MovieInfo = () => {
   }, [fetchStatuses]);
 
   useEffect(() => {
-    axios.get(`http://localhost:8001/api/comment/movie/${id}`)
+    axios.get(`${API_URL}/api/comment/movie/${id}`)
       .then(res => setComments(res.data))
       .catch(error => console.error('Error fetching comments:', error));
   }, [id]);
@@ -66,13 +68,13 @@ const MovieInfo = () => {
       planned: isPlanned,
       };
       if(!currentState[status]){
-        await axios.post(`http://localhost:8001/api/user/${status}`, {movieId: id}, {
+        await axios.post(`${API_URL}/api/user/${status}`, {movieId: id}, {
           headers: {
             Authorization: `Bearer ${token}`
           }});
       }
       else{
-        await axios.delete(`http://localhost:8001/api/user/${status}`, {
+        await axios.delete(`${API_URL}/api/user/${status}`, {
           headers: { Authorization: `Bearer ${token}` },
           data: { movieId: id } // <-- ось так правильно
         });
@@ -87,12 +89,12 @@ const MovieInfo = () => {
   const handleDeleteComment = async (comment_id) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:8001/api/comment/${comment_id}`,{
+      await axios.delete(`${API_URL}/api/comment/${comment_id}`,{
         headers: {
           Authorization: `Bearer ${token}`
         }
       });
-      const updated = await axios.get(`http://localhost:8001/api/comment/movie/${id}`);
+      const updated = await axios.get(`${API_URL}/api/comment/movie/${id}`);
       setComments(updated.data);
     } catch (err) {
       console.error('Error adding comment:', err);
@@ -108,7 +110,7 @@ const MovieInfo = () => {
     }
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:8001/api/comment', {
+      await axios.post(`${API_URL}/api/comment`, {
         movie: id,
         text: newComment,
         rating: 5
@@ -118,7 +120,7 @@ const MovieInfo = () => {
         }
       });
       setNewComment('');
-      const updated = await axios.get(`http://localhost:8001/api/comment/movie/${id}`);
+      const updated = await axios.get(`${API_URL}/api/comment/movie/${id}`);
       setComments(updated.data);
     } catch (err) {
       console.error('Error adding comment:', err);

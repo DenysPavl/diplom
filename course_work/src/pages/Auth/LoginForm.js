@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate} from "react-router-dom";
 import '../../styles/login.css'
 import { Link } from "react-router-dom";
+import API_URL from "../../utils/api";
 
 export default function LoginForm({setToken}) {
 
@@ -12,7 +13,7 @@ export default function LoginForm({setToken}) {
   function handlSubmit(event) {
     event.preventDefault();
 
-    fetch("http://localhost:8001/api//auth/login", {
+    fetch(`${API_URL}/api/auth/login`, {
       headers: {
         "Content-Type": "application/json",
       },

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Outlet, Navigate, useNavigate } from "react-router-dom";
+import API_URL from "./api";
 
 export default function PrivateRoutes({ token }) {
   const [auth, setAuth] = useState(false);
@@ -9,7 +10,7 @@ export default function PrivateRoutes({ token }) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8001/api/profile`, {
+      .get(`${API_URL}/api/profile`, {
         headers: { Authorization: "Bearer " + token },
       })
       .then((res) => {

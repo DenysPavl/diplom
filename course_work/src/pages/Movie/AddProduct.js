@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CategoryList from "../../components/CategoryList.js";
 import ImageUpload from "../../components/imageUpload.js";
+import API_URL from "../../utils/api";
 
 export default function AddProduct({ token }) {
   const navigate = useNavigate();
@@ -49,7 +50,7 @@ export default function AddProduct({ token }) {
 
       try {
         axios
-          .post("http://localhost:8001/api/product/create", productData, {
+          .post(`${API_URL}/api/product/create`, productData, {
             headers: { Authorization: "Bearer " + token },
           })
           .then((res) => console.log(res.data))

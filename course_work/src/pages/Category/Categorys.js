@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ListOfCategorys from "../../components/CategorysTableList";
+import API_URL from "../../utils/api";
 //import "bootstrap/dist/css/bootstrap.main.css";
 
 export default function Categorys({token}) {
@@ -10,7 +11,7 @@ export default function Categorys({token}) {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch("http://localhost:8001/api/category/all", {
+        const response = await fetch(`${API_URL}/api/category/all`, {
           headers: {
             "Content-Type": "application/json",
             'Authorization': 'Bearer ' + token
@@ -34,7 +35,7 @@ export default function Categorys({token}) {
     //if (!token) return; // Перевіряємо наявність токена перед видаленням
 
     try {
-      const response = await fetch(`http://localhost:8001/api/category/${id}`, {
+      const response = await fetch(`${API_URL}/api/category/${id}`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: "Bearer " + token,

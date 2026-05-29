@@ -43,26 +43,4 @@ ListOfCategorys.propTypes = {
 };
 
 
-  /*async function handlDelete(id) {
-    try {
-      await fetch("http://localhost:8001/api/category/" + id, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then(
-          (result) => {
-            if (result === "Success") window.location.reload();
-            else alert(result);
-          },
-          (error) => {
-            alert(error.message);
-          }
-        );
-    } catch (err) {
-      console.log(err);
-    }
-  }*/
+  /* Legacy delete helper removed from active code. */

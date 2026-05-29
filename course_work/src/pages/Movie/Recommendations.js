@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import MovieCart from "../../components/MovieCart";
+import API_URL from "../../utils/api";
 import "../../card.css";
 
 const INITIAL_RECOMMENDATIONS_LIMIT = 18;
@@ -32,7 +33,7 @@ export default function Recommendations({ token }) {
     setError("");
 
     axios
-      .get(`http://localhost:8001/api/recommendations?limit=${recommendationsLimit}`, {
+      .get(`${API_URL}/api/recommendations?limit=${recommendationsLimit}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
