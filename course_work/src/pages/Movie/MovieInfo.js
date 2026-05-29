@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import '../../styles/movieInfo.css'
 import axios from 'axios';
 import API_URL from '../../utils/api';
-import API_URL from '../../utils/api';
 
 const MovieInfo = () => {
   const { id } = useParams(); // Отримуємо ID з URL
