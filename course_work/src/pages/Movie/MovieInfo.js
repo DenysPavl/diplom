@@ -20,8 +20,8 @@ const MovieInfo = () => {
   const currentUserId = localStorage.getItem("user_id");
 
   useEffect(() => {
-    // Запит на сервер для отримання фільму за ID
-    axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=uk-UA`)
+    // Запит на сервер для отримання фільму за ID та даних відео
+    axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=uk-UA&append_to_response=videos`)
       .then(res => {
         setMovie(res.data);
       })
@@ -148,7 +148,33 @@ const MovieInfo = () => {
             Офіційний сайт
           </a>
         )}
-        
+
+        {movie.videos?.results && movie.videos.results.length > 0 && (() => {
+          const trailer = movie.videos.results.find(video => video.type === 'Trailer' && video.site === 'YouTube')
+            || movie.videos.results.find(video => video.site === 'YouTube');
+          return trailer ? (
+            <div className="trailer-section">
+              <h3>Трейлер</h3>
+              <div className="trailer-wrapper">
+                <iframe
+                  src={`https://www.youtube.com/embed/${trailer.key}`}
+                  title={`Трейлер ${movie.title}`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <a
+                className="trailer-link"
+                href={`https://www.youtube.com/watch?v=${trailer.key}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Відкрити трейлер на YouTube
+              </a>
+            </div>
+          ) : null;
+        })()}
+
         {/* Секція жанрів */}
         <div className="genres-section">
           {movie.genres && movie.genres.map(genre => (
